@@ -10,12 +10,12 @@ import Foundation
 
 
 struct MarvelCharacter:Codable, Equatable{
-   
+    
     var id:Int
     var name:String
     var description:String
     var thumbnail:Thumbnail
-   
+    
     public init(id:Int,name:String,description:String,thumbnail:Thumbnail){
         self.id = id
         self.name = name
@@ -57,7 +57,7 @@ struct Thumbnail:Codable{
 
 
 struct CharacterResponseData:Codable, Equatable{
-   
+    
     var offset:Int
     var limit:Int
     var total:Int
@@ -70,7 +70,7 @@ struct CharacterResponseData:Codable, Equatable{
         case total
         case count
         case results
-
+        
     }
     
     static func == (lhs: CharacterResponseData, rhs: CharacterResponseData) -> Bool {
@@ -95,7 +95,7 @@ struct NetworkResponse<Wrapped: Codable>:Codable,Equatable {
     
     
     
-
+    
 }
 
 

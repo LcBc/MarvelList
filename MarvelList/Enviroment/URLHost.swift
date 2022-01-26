@@ -18,16 +18,16 @@ extension URLHost {
     static var staging: Self {
         URLHost(rawValue: "gateway.marvel.com")
     }
-
+    
     static var production: Self {
         URLHost(rawValue: "gateway.marvel.com")
     }
-
+    
     static var `default`: Self {
-        #if DEBUG
+#if DEBUG
         return staging
-        #else
+#else
         return production
-        #endif
+#endif
     }
 }

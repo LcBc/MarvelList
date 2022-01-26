@@ -18,7 +18,7 @@ class NetworkIntegrationTests: XCTestCase {
         let result = try awaitCompletion(of: publisher)
         let response = MarvelCharacter.MockCharacterListDataURLResponder.response.data
         XCTAssertEqual(result, [response])
-
+        
     }
     
     func testSuccessfullFetchingPage2CharacterRequest() throws {
@@ -28,17 +28,17 @@ class NetworkIntegrationTests: XCTestCase {
         let result = try awaitCompletion(of: publisher)
         let response = MarvelCharacter.MockCharacterListDataURLResponder.response.data
         XCTAssertEqual(result, [response])
-
+        
     }
     
     func testFailingWhenEncounteringError() throws {
-           let session = URLSession(mockResponder: MockErrorURLResponder.self)
-           let publisher = session.publisher(for: .CharacterList(auth: AuthenticationModel()), using: ())
-           XCTAssertThrowsError(try awaitCompletion(of: publisher))
-       }
+        let session = URLSession(mockResponder: MockErrorURLResponder.self)
+        let publisher = session.publisher(for: .CharacterList(auth: AuthenticationModel()), using: ())
+        XCTAssertThrowsError(try awaitCompletion(of: publisher))
+    }
     
     
     
-
+    
     
 }

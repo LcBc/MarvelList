@@ -19,7 +19,7 @@ struct ListView: View {
                     VStack{
                         ScrollView {
                             LazyVGrid(columns:columns, spacing: 20) {
-//                              Text("hola")
+                                //                              Text("hola")
                                 
                                 ForEach( viewModel.characters, id: \.id) { heroe in
                                     ListCell(character: heroe)
@@ -32,7 +32,7 @@ struct ListView: View {
                                         }
                                 }
                                 
-                               
+                                
                             }
                             
                         }
@@ -43,10 +43,10 @@ struct ListView: View {
                         ActivityIndicator(isAnimating: .constant(true), style: .large)
                     }.frame(width: geometry.size.width / 2,
                             height: geometry.size.height / 5)
-                    .background(Color.secondary.colorInvert())
-                    .foregroundColor(Color.primary)
-                    .cornerRadius(20)
-                    .opacity(viewModel.isLoading ? 1 : 0)
+                        .background(Color.secondary.colorInvert())
+                        .foregroundColor(Color.primary)
+                        .cornerRadius(20)
+                        .opacity(viewModel.isLoading ? 1 : 0)
                 }
             }.navigationBarTitle("List of Heroes!")
         }.onAppear(perform: {viewModel.fetchCharacters()})

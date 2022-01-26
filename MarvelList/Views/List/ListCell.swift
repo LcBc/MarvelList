@@ -30,7 +30,7 @@ struct ListCell: View {
                             .font(.caption)
                             .fontWeight(.black)
                             .foregroundColor(.primary)
-                    
+                        
                         
                     }.frame(width: 100, height: 20, alignment: .top)
                     
@@ -38,10 +38,10 @@ struct ListCell: View {
                 }
                 
             }.cornerRadius(10)
-            .overlay(
-                RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color(.sRGB, red: 150/255, green: 150/255, blue: 150/255, opacity: 0.2), lineWidth: 1)
-            ).frame(width: 135, height: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color(.sRGB, red: 150/255, green: 150/255, blue: 150/255, opacity: 0.2), lineWidth: 1)
+                ).frame(width: 135, height: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
         }
     }
 }

@@ -35,7 +35,7 @@ extension URLSession {
                 error: EndpointErrors.InvalidEndpointError
             ).eraseToAnyPublisher()
         }
-       
+        
         return dataTaskPublisher(for: request)
             .map(\.data)
             .decode(type: NetworkResponse<R>.self, decoder: decoder)

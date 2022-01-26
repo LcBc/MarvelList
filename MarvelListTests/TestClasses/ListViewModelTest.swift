@@ -9,14 +9,14 @@ import XCTest
 @testable import MarvelList
 
 class ListViewModelTest: XCTestCase {
-
+    
     var sut:ListViewModel!
     
     override func setUp() {
         sut = ListViewModel()
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
-
+    
     override func tearDown()  {
         sut = nil
     }
@@ -26,7 +26,7 @@ class ListViewModelTest: XCTestCase {
     func testDefaultURLSessionIsShared(){
         XCTAssertEqual(sut.session, URLSession.shared)
     }
-        
+    
     func testSetURLSession(){
         let session = URLSession(mockResponder: MarvelCharacter.MockCharacterListDataURLResponder.self)
         sut.session = session
@@ -76,7 +76,7 @@ class ListViewModelTest: XCTestCase {
         XCTAssertEqual(result.first?.last, response)
     }
     
-  
+    
     func testLoadingUpdate() throws{
         
         let session = URLSession(mockResponder: MarvelCharacter.MockCharacterListDataURLResponder.self)
@@ -87,8 +87,8 @@ class ListViewModelTest: XCTestCase {
         
         XCTAssertEqual(sut.isLoading, false)
     }
-
     
     
-
+    
+    
 }

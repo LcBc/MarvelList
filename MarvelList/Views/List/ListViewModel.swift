@@ -19,14 +19,14 @@ class ListViewModel:ObservableObject {
     private var maxPage = 100
     var listIsFull = false
     var cancellables = [AnyCancellable]()
-        
+    
     func fetchCharacters(){
         let publisher = session.publisher(for: .CharacterList(offset: page ,auth: AuthenticationModel()), using: ())
         if  page < maxPage {
-           isLoading = true
+            isLoading = true
             var cancellable: AnyCancellable
             cancellable = publisher.receive(on: RunLoop.main).sink {
-               print($0)
+                print($0)
                 self.isLoading = false
                 
             } receiveValue: { [self] in                
@@ -43,5 +43,5 @@ class ListViewModel:ObservableObject {
             
         }
     }
-
+    
 }
